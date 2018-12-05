@@ -24,7 +24,7 @@ output -> aligned images(182*182)
 * extract  the features of the images using the pretrained model.
 * saves the features as embedding.
 * embedding are used for training the svm classifier.
-* saves the trained classifier in pikle format.
+* saves the trained classifier in pickle format.
 
 input <- aligned images
 output -> classifier
@@ -34,7 +34,7 @@ output -> classifier
 
 "PREDICT.PY"
 
-* this script load ,align the images and resized to the format in which we can able to feed to neural network for feature extraction purpose.
+* this script loads and align the images. It resizes to the format in which, we can able to feed to neural network for feature extraction purpose.
 * pretrained model is loaded for feature extraction.
 * trained model  [classifier] is loaded for prediction purpose.
 
@@ -48,8 +48,8 @@ output -> prediction result
 
 * this script import mtcnn_detector script and helper script for detecting faces from the video file.
 * pretrained model is loaded.
-* resize the detected face to 182*182 snd then resized to 160*160.
-* prewhiten using facenet file, and paseed for feature extarction using pretrained model and predicts the label using trained classfier
+* resizes the detected face to 182*182 and then resized to 160*160.
+* the resized images are passed to prewhiten using facenet file for feature extraction using pretrained model and predicts the label using trained classfier
 
 input <- video_file
 output -> predictions
