@@ -31,7 +31,7 @@ import os
 import argparse
 import tensorflow as tf
 import numpy as np
-import facenet1
+import facenet
 import detect_face
 import random
 from time import sleep
@@ -43,8 +43,8 @@ def main(args):
         os.makedirs(output_dir)
     # Store some git revision info in a text file in the log directory
     src_path,_ = os.path.split(os.path.realpath(__file__))
-    facenet1.store_revision_info(src_path, output_dir, ' '.join(sys.argv))
-    traindataset = facenet1.get_dataset(args.input_dir)
+    facenet.store_revision_info(src_path, output_dir, ' '.join(sys.argv))
+    traindataset = facenet.get_dataset(args.input_dir)
     
     print('Creating networks and loading parameters')
     
@@ -90,7 +90,7 @@ def main(args):
                             text_file.write('%s\n' % (output_filename))
                             continue
                         if img.ndim == 2:
-                            img = facenet1.to_rgb(img)
+                            img = facenet.to_rgb(img)
                         img = img[:,:,0:3]
     
                         bounding_boxes, _ = detect_face.detect_face(img, minsize, pnet, rnet, onet, threshold, factor)
