@@ -1,4 +1,6 @@
 # coding: utf-8
+# FACE-DETECTION SCRIPT
+#YuanYang
 import os
 import mxnet as mx
 import numpy as np
