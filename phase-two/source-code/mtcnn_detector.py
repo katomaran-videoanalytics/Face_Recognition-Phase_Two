@@ -1,6 +1,6 @@
 # coding: utf-8
 # FACE-DETECTION SCRIPT
-#YuanYang
+#YuanYang reference link :https://github.com/pangyupo/mxnet_mtcnn_face_detection/
 import os
 import mxnet as mx
 import numpy as np
